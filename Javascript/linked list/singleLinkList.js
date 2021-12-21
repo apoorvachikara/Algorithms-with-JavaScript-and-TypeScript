@@ -61,7 +61,18 @@ class LinkList {
             count += 1;
             current = current.next;
          }
-         return current.data;
+         return current?.data || `Doesn't exist`;
+      }
+
+      valueAtIndexRec(index, count = 0, current = this.head) {
+         if (index < 0) return `Index should be greater than zero`;
+         if (count === index) {
+            return current.data;
+         }
+
+         if (current === null) return false;
+
+         return this.valueAtIndex(index, count++, current.next);
       }
 
 }
@@ -74,7 +85,8 @@ a.insert(7);
 a.printRec('r');
 // console.log(a.sum);
 
-console.log(a.valueAtIndex(-111));
+console.log(a.valueAtIndex(1));
+console.log(a.valueAtIndexRec(2));
 
 
 
