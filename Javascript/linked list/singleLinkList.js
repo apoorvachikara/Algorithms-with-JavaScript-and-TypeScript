@@ -13,18 +13,71 @@ class Node {
 
 class LinkList {
       constructor(data) {
-        this.head = new Node(data);  
+        this.head = new Node(data);
+        this.sum = 0;  
       }
 
       insert(data) {
          this.head = new Node(data, this.head);
       }
+
+      print () {
+         let current = this.head;
+         while (current !== null ) {
+            // console.log(current.data);
+            // this.arrayValues.unshift(current.data);
+            current = current.next;
+        }
+      }
+
+      /**
+       * 
+       * @param {*} current : Node
+       * @returns void
+       */
+      printRec (current) {
+         if (current === null) {
+            return;
+         } else if (current == 'r') {
+            this.printRec(this.head);
+         } else {
+            this.sum += current.data;
+            // console.log(current.data);
+            this.printRec(current.next);
+         }
+      }
+
+      /**
+       * Find the value at given Index
+       */
+
+      valueAtIndex(index) {
+
+         if (index < 0) return `Index should be greater than zero`;
+
+         let current = this.head,
+             count = 0;
+         while (current !== null && count !== index) {
+            count += 1;
+            current = current.next;
+         }
+         return current.data;
+      }
+
 }
 
-const a = new LinkList('A', null);
-a.insert('B');
-a.insert('C');
+const a = new LinkList(2, null);
+a.insert(8);
+a.insert(3);
+a.insert(7);
+
+a.printRec('r');
+// console.log(a.sum);
+
+console.log(a.valueAtIndex(-111));
 
 
-console.log(a);
+
+
+
 
