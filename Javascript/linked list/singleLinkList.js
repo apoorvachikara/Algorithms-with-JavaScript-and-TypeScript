@@ -21,10 +21,60 @@ class LinkList {
          this.head = new Node(data, this.head);
       }
 
+      /**
+       * 
+       * @param {*} data : number - it could be anything
+       * @param {*} index : number
+       * 
+       * We need to insert a data at given index- itreate throgh linklist using two pointer prev and current 
+       * create new node = update prev.next with node and new node.next with current
+       */
+      insertAtIndex(data, index = 0) {
+          let count = 0,
+              prev = this.head,
+              current = this.head;
+          while(count < index) {
+              prev = current;
+              current = current.next;
+              count += 1;
+          }
+
+          const newNode = new Node(data, current.next);
+          prev.next = newNode;
+      }
+
+      /**
+       * 
+       * @param {*} data : number|string
+       * @param {*} index : number
+       * @returns LinkList
+       * 
+       * It is similar to insert, just updates the current pointer data
+       */
+
+      updateAtIndex(data, index = 0) {
+           let count = 0,
+               current = this.head;
+            
+               while (count < index) {
+                   current = current.next;
+                   count +=1;
+               }
+
+               current.data = data;
+
+               return this.head;
+      }
+
+      invertLinkList () {
+
+      }
+
       print () {
+
          let current = this.head;
          while (current !== null ) {
-            // console.log(current.data);
+            console.log(current.data);
             // this.arrayValues.unshift(current.data);
             current = current.next;
         }
@@ -41,8 +91,8 @@ class LinkList {
          } else if (current == 'r') {
             this.printRec(this.head);
          } else {
-            this.sum += current.data;
-            // console.log(current.data);
+            // this.sum += current.data;
+            console.log(current.data ? current.data: '')
             this.printRec(current.next);
          }
       }
@@ -82,11 +132,11 @@ a.insert(8);
 a.insert(3);
 a.insert(7);
 
-a.printRec('r');
-// console.log(a.sum);
+// console.log(a.insertAtIndex(1, 0));
 
-console.log(a.valueAtIndex(1));
-console.log(a.valueAtIndexRec(2));
+console.log(a.updateAtIndex('Hello', 1));
+console.log(a.printRec('r'))
+
 
 
 
