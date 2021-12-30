@@ -3,7 +3,9 @@
  * Selection Sort - It is a in-place algorithm with O(1) space complexity
  * The time complexity is O(n**2) worst and average case- 
  * Best case complexity is O(n)
+ * 
  * Working - It iterates through all the elements using two for loops.
+ * 
  * It works on repeatedly finding the minimun element in the subarray and swap them
  * Step1 - Take the first element as the minimum element and rest of the array is 
  *         the sub-array(where we need to get minimum element)
