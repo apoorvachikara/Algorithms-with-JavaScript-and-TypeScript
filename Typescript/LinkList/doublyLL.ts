@@ -1,5 +1,3 @@
-import { threadId } from "worker_threads";
-
 type value = number | string | null;
 
 class NodeLL {
@@ -29,6 +27,29 @@ class DoublyLL {
             const node = new NodeLL(value,null , this.head);
             this.head.previous = node;
             this.head = node;  
+            return this;
+    }
+
+    insertAtIndex(value: value, index: number) {
+            let current: NodeLL = this.head;
+            let previous: NodeLL = null;
+            let count: number = 0;
+
+            while (current && index !== count) {
+                previous = current;
+                current = current.next;
+                count += 1;
+            }
+
+            if (!previous) {
+                const newNode = new NodeLL(value, null, this.head);
+                this.head = newNode;
+                return this;
+            } 
+
+            const newNode = new NodeLL(value, previous, current);
+            previous.next = newNode;
+            return this;
     }
 
     print() {
@@ -38,15 +59,11 @@ class DoublyLL {
             arr.push(current.value);
             current = current.next;
         }
-
         console.log(arr);
-        
+        return this;
     }
 }
 
 const dll = new DoublyLL(1);
-dll.insert(2);
-dll.insert(3);
-dll.print();
-
+dll.insert(2).insert(3).print().insertAtIndex(4,0).insertAtIndex(77, 2).print();
 console.log(dll);
