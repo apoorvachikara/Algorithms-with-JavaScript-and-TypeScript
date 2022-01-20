@@ -68,16 +68,26 @@ class Linklist {
     const arr = [];
     let current = this.head;
 
+    // convert list to array
     while (current) {
       arr.push(current.value);
       current = current.next;
     };
 
+    // reset current to the head again
+    // to loop through the list
+    // and update the values of link list nodes
     current = this.head;
 
     let start = 0;
     let end = arr.length -1;
+
+    // we are using sliding window for getting values from
+    // start and end of the array
+    // updating start and end to run the loop
     while (start <= end) {
+      // just add one time the array value
+      // this case will come in even length of array
       if (start === end) current.value = arr[start];
       else {
         current.value = arr[start];
@@ -87,7 +97,6 @@ class Linklist {
       end -= 1;
       current = current.next?.next;
     }
-
     return this;
   }
 }
