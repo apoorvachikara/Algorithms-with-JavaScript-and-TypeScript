@@ -17,16 +17,19 @@ class DoublyLL {
 
     private head: NodeLL = null;
     private tail: NodeLL = null;
+    private size: number = 0;
+
     constructor(value: value = null, previous: NodeLL = null, next: NodeLL = null) {
         this.head = new NodeLL(value, previous, next);
         this.tail = this.head;
+        this.inceaseSize();
     }
-
 
     insert(value: value = null) {
             const node = new NodeLL(value,null , this.head);
             this.head.previous = node;
             this.head = node;  
+            this.inceaseSize();
             return this;
     }
 
@@ -49,7 +52,21 @@ class DoublyLL {
 
             const newNode = new NodeLL(value, previous, current);
             previous.next = newNode;
+
+            this.inceaseSize();
             return this;
+    }
+
+    remove(option: {index: number, position: string}) {
+        // remove from last 
+        // we can use tail
+        if (option.position === 'last') {
+             const previous: NodeLL = this.tail.previous;
+             previous.next = null;
+             this.tail = previous;
+        }
+
+        return this;
     }
 
     print() {
@@ -62,8 +79,18 @@ class DoublyLL {
         console.log(arr);
         return this;
     }
+
+    inceaseSize() {
+        this.size += 1;
+    }
+
+    get length(): number {
+        return this.size;
+    }
 }
 
 const dll = new DoublyLL(1);
-dll.insert(2).insert(3).print().insertAtIndex(4,0).insertAtIndex(77, 2).print();
-console.log(dll);
+dll.insert(2).insert(3).print().insertAtIndex(4,0).insertAtIndex(77, 2).print().remove({index: 0, position: 'last'}).print();
+// console.log(dll.length);
+// console.log(dll);
+ 
