@@ -7,7 +7,14 @@ class Node {
   }
 }
 
+/**
+ * Linklist creation class
+ */
 class LinkList {
+  /**
+   *
+   * @param {number | string} value
+   */
   constructor(value) {
     this.head = new Node(value, this.head);
   }

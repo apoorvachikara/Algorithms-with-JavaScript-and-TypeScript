@@ -30,7 +30,7 @@ class DoublyLL {
 
     private head: NodeLL = null;
     private tail: NodeLL = null;
-    private size: number = 0;
+    private size = 0;
 
     /**
      * 
@@ -70,7 +70,7 @@ class DoublyLL {
     insertAtIndex(value: value, index: number) {
             let current: NodeLL = this.head;
             let previous: NodeLL = null;
-            let count: number = 0;
+            let count = 0;
 
             while (current && index !== count) {
                 previous = current;
@@ -101,7 +101,7 @@ class DoublyLL {
      * if we use position it can delete from start i.e head
      * and last i.e tail
      */
-    remove(index: number = null, position: string = 'start') {
+    remove(index: number = null, position = 'start') {
         
         // based on index passed to the function 
         if (index !== null && index > 0) {
