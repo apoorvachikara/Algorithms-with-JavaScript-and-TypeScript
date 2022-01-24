@@ -1,3 +1,6 @@
+import chalk from 'chalk';
+const log = console.log;
+
 /**
  * NodeLL calss
  */
@@ -90,6 +93,7 @@ l2.insert(5);
 
 l1.print();
 l2.print();
-console.log(checkElement(l1, l2));
+
+log(chalk.blueBright(JSON.stringify(checkElement(l1, l2))));
 
 
