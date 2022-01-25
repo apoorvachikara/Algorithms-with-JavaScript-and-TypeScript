@@ -2,7 +2,7 @@ import chalk from 'chalk';
 const log = console.log;
 
 /**
- * NodeLL calss
+ * NodeLL class
  */
 class NodeLL {
   /**
@@ -56,7 +56,15 @@ class LinkList {
  * @param {LinkList} list1
  * @param {LinkList} list2
  * @return {LinkList}
+ *
+ * What algorithm will you implement to find similar elements from two
+ * Linked Lists given and return the result in the form of a Linked List?
+ * Assume there are no duplicates.
+ *
  * Steps to be followed
+ * We can create a set to keep the visited elements from list1
+ * and check for list2 if it exist in the set.
+ * If we find the element in the set, add it to the result linklist
  */
 const checkElement = (list1, list2) => {
   let current1 = list1.head;
@@ -95,5 +103,3 @@ l1.print();
 l2.print();
 
 log(chalk.blueBright(JSON.stringify(checkElement(l1, l2))));
-
-
