@@ -42,28 +42,49 @@ class LinkList {
   constructor() {
     this.mainHead = null;
     this.head = null;
+    this.tail = null;
   }
 
+  // transform(array) {
+  //   let previousList = null;
+  //   const currentList = null;
+  //   const inputArray = array;
+  //   for (let i = 0, leng = inputArray.length; i < leng; i++) {
+  //     for (let j = 0, len = inputArray[i].length; j < len; j++) {
+  //       if (previousList) {
+  //         this.head = new NodeLL(inputArray[i][j], this.head);
+  //         previousList.down = this.head;
+  //         previousList = previousList.right;
+  //       } else {
+  //         const node = new NodeLL(inputArray[i][j], this.mainHead);
+  //         this.mainHead = node;
+  //       }
+  //     }
+  //     previousList ? previousList = this.head: previousList = this.mainHead;
+  //   }
+  //   console.log(this.mainHead);
+  // }
   /**
    *
    * @param {Array<number>} array
+   * Steps:
+   * 1) Create a new linklist if for every row of array:
+   *  - we can have head and tail, keep the head
+   *  - on very first iteration we create a first list
+   * 2) In next iteration, add new node to head.down and keep moving
+   * 3) In next iteration, follow step 2
    */
   transform(array) {
-    let previousList = null;
-    let currentList = null;
-    const inputArray = array;
+    const previous = null;
+    const rowLength = array.length;
+    const colLength = array[0]?.length;
+    let head = null;
+    let mainHead = null;
 
-    for (let i = 0, leng = inputArray.length; i < leng; i++) {
-      for (let j = 0, len = inputArray[i].length; j < len; j++) {
-        if (previousList) {
-            this.head = new NodeLL(inputArray[i][j], this.head);
-        } else {
-           const node = new NodeLL(inputArray[i][j], this.mainHead);
-           previousList = this.mainHead;
-        }
+    for (let i = 0; i < array.length; i++) {
+      for (let j = 0, len = array[i]; j < len; j++) {
       }
     }
-    console.log(previousList);
   }
 }
 
