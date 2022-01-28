@@ -30,7 +30,8 @@ class LinkList {
 * @param {null | string | number} value
 */
   constructor(value = null) {
-    this.value = value;
+    this.head = new NodeLL(value);
+    this.tail = this.head;
   }
 
   /**
@@ -38,7 +39,9 @@ class LinkList {
    * @param {null | string | number} value
    */
   insert(value) {
-    this.head = new NodeLL(value, this.head);
+    const node = new NodeLL(value);
+    this.tail.next = node;
+    this.tail = node;
   }
 
   /**
@@ -67,18 +70,34 @@ class LinkList {
  */
 const evenOdd = (list) => {
   let current = list.head;
-  let oddList = null;
+  let head = null;
   let previous = null;
+  let tail = null;
+
+
   while (current) {
     if (current.value % 2 !== 0) {
-      oddList = new NodeLL(current.value, oddList);
-      previous.next = current.next;
+      if (!head) {
+        head = new NodeLL(current.value, head);
+        tail = head;
+      } else {
+        const newNode = new NodeLL(current.value);
+        tail.next = newNode;
+        tail = tail.next;
+      }
+
+      // when we encounter odd digit at index 0
+      // we need to move the head ahead in else condition
+      previous ? previous.next = current.next: (() => {
+        list.head = list.head.next;
+        current = list.head;
+      })();
     }
     previous = current;
     current = current.next;
   }
-  previous.next = oddList;
-  return list.head;
+  previous.next = head;
+  list.print(); // prints the sorted list
 };
 
 const l1 = new LinkList(1);
@@ -86,9 +105,6 @@ const l1 = new LinkList(1);
 for (let i = 12; i >= 2; i--) {
   l1.insert(i);
 }
+evenOdd(l1);
 
-
-l1.print();
-
-console.log(evenOdd(l1));
 
