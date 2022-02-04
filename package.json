@@ -10,6 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/apoorvachikara/Algorithms.git"
   },
+  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -22,5 +23,8 @@
     "@typescript-eslint/parser": "^5.10.0",
     "eslint": "^8.7.0",
     "eslint-config-google": "^0.14.0"
+  },
+  "dependencies": {
+    "chalk": "^5.0.0"
   }
 }
