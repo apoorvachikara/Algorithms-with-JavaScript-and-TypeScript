@@ -1,5 +1,5 @@
 /**
- * Sinking sort or exchange sort
+ * Sinking sort or exchange sort or brute-force approach
  */
 class BubbleSort {
     /**
@@ -71,5 +71,7 @@ const sort_v3 = new BubbleSort().sorting_v3;
 console.log(sort([-1, -4, 1, 4, 5, 6, -6]));
 console.log(sort_v2([-1, -4, 1, 4, 5, 6, -6]));
 console.log(sort_v3([6, 1, 23, -0, 1, 5, 8, -1]));
+
+
 
 
