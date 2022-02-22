@@ -12,6 +12,7 @@ class SelectionSort {
               [arr[index], arr[min]] = [arr[min], arr[index]];
             }
         }
+        return arr;
     }
 
     /**
