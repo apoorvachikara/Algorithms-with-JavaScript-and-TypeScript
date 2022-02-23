@@ -22,7 +22,10 @@
  * return - sorted in-place array
  */
 
-const array = [3, 2, 56, 2, 3, 42, 3, 2, 56, 2, 3, 42, 3, 2, 56];
+// const array = [3, 2, 56, 2, 3, 42, 3, 2, 56, 2, 3, 42, 3, 2, 56];
+// eslint-disable-next-line max-len
+const array = [0, 2, 2, 2, 0, 2, 1, 1, 0, 2, 2, 2, 0, 2, 1, 1, 0, 2, 2, 2, 0, 2, 1, 1, 0, 2, 2, 2, 0, 2, 1, 1, 0, 2, 2, 2, 0, 2, 1, 1, 0, 2, 2, 2, 0, 2, 1, 1, 0, 2, 2, 2, 0, 2, 1, 1, 0, 2, 2, 2, 0, 2, 1, 1, 0, 2, 2, 2, 0, 2, 1, 1, 0, 2, 2, 2, 0, 2, 1, 1, 0, 2, 2, 2, 0, 2, 1, 1, 0, 2, 2, 2, 0, 2, 1, 1, 0, 2, 2, 2, 0, 2, 1, 1, 0, 2, 2, 2, 0, 2, 1, 1];
+
 // eslint-disable-next-line max-len
 const array1 = [0, 2, 2, 2, 0, 2, 1, 1, 0, 2, 2, 2, 0, 2, 1, 1, 0, 2, 2, 2, 0, 2, 1, 1, 0, 2, 2, 2, 0, 2, 1, 1, 0, 2, 2, 2, 0, 2, 1, 1, 0, 2, 2, 2, 0, 2, 1, 1, 0, 2, 2, 2, 0, 2, 1, 1, 0, 2, 2, 2, 0, 2, 1, 1, 0, 2, 2, 2, 0, 2, 1, 1, 0, 2, 2, 2, 0, 2, 1, 1, 0, 2, 2, 2, 0, 2, 1, 1, 0, 2, 2, 2, 0, 2, 1, 1, 0, 2, 2, 2, 0, 2, 1, 1, 0, 2, 2, 2, 0, 2, 1, 1];
 
@@ -49,7 +52,7 @@ class BubbleSort {
       }
     }
     console.timeEnd('start');
-    log(arr);
+    // log(arr);
     return arr;
   };
 
@@ -79,5 +82,9 @@ class BubbleSort {
 }
 
 const bubble = new BubbleSort();
+console.time('eff');
 bubble.bubbleSortEfficient(array);
+console.timeEnd('eff');
+console.time('nor');
 bubble.bubbleSort(array1);
+console.timeEnd('nor');

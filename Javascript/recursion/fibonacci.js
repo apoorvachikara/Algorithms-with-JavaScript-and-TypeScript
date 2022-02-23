@@ -39,3 +39,4 @@ const fibLessMem = (n) => {
 
 console.log(fibLessMem(1));
 
+// (logn)
