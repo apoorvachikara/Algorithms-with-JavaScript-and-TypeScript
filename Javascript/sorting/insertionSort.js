@@ -4,13 +4,14 @@
  *
  * Bubble sort works while swapping adjacent elements to the end
  * And Insertion sort works by sending one element in the partially sorted array
+ * It does maintain order of the elements - stable algorithm
  */
 
 /**
- * Insertion Sort - It is an in-place alog with space complexity O(1).
+ * Insertion Sort - It is an in-place along with space complexity O(1).
  * The time complexity average and worst is O(n**2)- best is O(n)
  *
- * Working - We iterate throught left to right.
+ * Working - We iterate through left to right.
  * const arr = [4, 2, 5, 3, 6];
  * Step 1 - We consider first element in the array as partially sorted array
  * i.e [4]
@@ -19,7 +20,7 @@
  * Step 4: Now we increase the window of partially sorted array like this [2, 4]
  * Step 5: Again we check if the first element in unsorted array that is [5] in
  * this step where to fit this in sorted partially array
- * Step 6: if we check [4] is greater than [5] no so we just add it in 
+ * Step 6: if we check [4] is greater than [5] no so we just add it in
  * temp sorted array
  * Step 7: Now, partially sorted array becomes [2, 4, 5] and we have first value
  * at unsorted array as [3]
@@ -53,7 +54,7 @@ class InsertionSort {
 
       while (j > -1 && (array[j] > current)) {
         array[j+1] = array[j];
-        array[j+1] = current;
+        array[j] = current;
         j--;
       }
     }
@@ -62,5 +63,8 @@ class InsertionSort {
 }
 
 const insertionSort = new InsertionSort();
+// eslint-disable-next-line max-len
+const arr = [-10, -7, -7, -6, -6, -5, -5, -4, -4, -4, -2, -1, 1, 3, 5, 5, 6, 8, 8, 10];
 console.log(insertionSort.sort([3, 0, 2, 5, -1, 4, 1]));
+console.log(insertionSort.sort(arr));
 

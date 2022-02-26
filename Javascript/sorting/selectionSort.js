@@ -7,7 +7,7 @@
  *
  * Working - It iterates through all the elements using two for loops.
  *
- * It works on repeatedly finding the minimun
+ * It works on repeatedly finding the minimum
  * element in the subarray and swap them
  * Step1 - Take the first element as the minimum element and
  * rest of the array is
@@ -62,4 +62,4 @@ class SelectionSort {
 
 
 const selectionSort = new SelectionSort();
-console.log(selectionSort.sort([0, 2, 2, 2, 0, 2, 1, 1]));
+console.log(selectionSort.sort( [2, 4, 5, 6, 2, 4, 5]));
