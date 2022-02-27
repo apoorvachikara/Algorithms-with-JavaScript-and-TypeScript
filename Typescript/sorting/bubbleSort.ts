@@ -9,7 +9,7 @@ class BubbleSort {
     constructor(){}
 
     /**
-     * Simple two loop sorting function if next element is smaller than the ouuter loop 
+     * Simple two loop sorting function if next element is smaller than the outer loop 
      * element we swap it
      * @param arr array of number
      * @returns 
@@ -34,7 +34,7 @@ class BubbleSort {
     sorting_v2(arr: Array<unknown>) {
         // run the steps n-1 times
         for (let i = 0; i < arr.length; i++) {
-            // the loop will run total - outter loop run as the last elements 
+            // the loop will run total - outer loop run as the last elements 
             // are already sorted
             for (let j = 1; j < arr.length -i ; j++) {
                 if (arr[j] < arr[j-1]) {
