@@ -20,8 +20,7 @@ const findFirstUniqueOccurence = (array) => {
   let unique= '';
 
   for (let index = 0; index < array.length; index++) {
-    if (!elementMapping.has(array[index])) elementMapping.set(array[index], 1);
-    else elementMapping.set(array[index], elementMapping.get(array[index]) + 1);
+    !elementMapping.has(array[index]) ? elementMapping.set(array[index], 1) : elementMapping.set(array[index], elementMapping.get(array[index]) + 1);
   }
 
   for (const [key, value] of elementMapping) {

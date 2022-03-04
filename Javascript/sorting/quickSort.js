@@ -1,9 +1,22 @@
+/**
+ *
+ * @param {*} array
+ * @param {*} left
+ * @param {*} right
+ */
 const swap = (array, left, right) => {
   const temp = array[left];
   array[left] = array[right];
   array[right] = temp;
 };
 
+/**
+ *
+ * @param {*} array
+ * @param {*} left
+ * @param {*} right
+ * @return {number}
+ */
 const partition = (array, left, right) => {
   const pivot = Math.floor((left + right)/2);
   let leftPointer = left;
@@ -25,9 +38,17 @@ const partition = (array, left, right) => {
     }
   }
 
-  return array;
+  return leftPointer;
 };
 
+
+/**
+ *
+ * @param {*} item
+ * @param {*} left
+ * @param {*} right
+ * @return {number[]}
+ */
 const quickSort = (item, left, right) => {
   let index;
 
@@ -47,7 +68,7 @@ const quickSort = (item, left, right) => {
   return item;
 };
 
-const arr = [0, -1, 0, -3, 9, 1];
+const arr = [3, 5, 1];
 console.log(quickSort(arr, 0, arr.length -1));
 
 // function QuickSort(Arr){
