@@ -24,3 +24,4 @@ const mergeObjects = (...objects) => {
 }
 
 console.log(mergeObjects({name: 'Apoorva', age: 30, add: 'Noida'}, {name: 'Apoorva 1', age: 30, add: 'Noida'}, {name: 'Apoorva 2', age: 30, add: 'Noida'}));
+console.log(mergeObjects({name: 'Apoorva', age: 20}));
