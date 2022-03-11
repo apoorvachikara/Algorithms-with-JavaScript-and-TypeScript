@@ -13,3 +13,7 @@ const findKElements = (array, smallest = 0, largest = 0) => {
 
 const mockArr = [1, 23, 12, 9, 30, 2, 50];
 console.log(findKElements(mockArr, 0, 3));
+
+
+
+
