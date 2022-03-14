@@ -10,7 +10,8 @@ const str1 = "hello  world";
  * @return string
  */
 
-String.prototype.customSplit = function (separator = '') {
+String.prototype.customSplit =  function (separator = '') {
+  console.log(this);
   const res = [];
   const string = this;
   let temp = '';
