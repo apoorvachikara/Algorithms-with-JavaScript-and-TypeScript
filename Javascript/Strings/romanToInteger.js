@@ -13,7 +13,8 @@
  *  
  * Whenever we have any roman number we read it from left to right
  * and whenever we found smaller number first and then large number 
- * we subtract it else we add it 
+ * we subtract (large element  - small ) and add it to the sum else 
+ * we only add it 
  *  for example - XVIV - X and V are ascending and then we have I 
  *  and again I that makes it 10 + 5 - 1 + 5 = 19
  */
@@ -28,24 +29,14 @@ const romanToInteger = (string) => {
         'M': 1000
     }
     let result = 0;
-    // for (let i =0, len = string.length; i < len; i++) {
-    //     const current = romanTable[string[i]];
-    //     const next = romanTable[string[i+1]];
-    //     if ( current > next) {
-    //         result += current;
-    //     } else {
-    //         result += next - current;
-    //         i++
-    //     }
-    // }
 
     for (let i=0; i < string.length; i++){
         const cur = romanTable[string[i]];
         const next = romanTable[string[i+1]];
 
         if (cur < next){
-            result += next - cur // IV -> 5 - 1 = 4
-            i++
+            result += (next - cur) // IV -> 5 - 1 = 4
+            i++;
         } else {
             result += cur
         }

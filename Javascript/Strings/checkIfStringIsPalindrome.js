@@ -1,5 +1,5 @@
 /**
- * Checking string is palindrome with built-in function 
+ * Checking string is palindrome with built-in function mdzfbkjdhfkdshfkjdsh
  * @param {*} string 
  * @return {boolean}
  */
