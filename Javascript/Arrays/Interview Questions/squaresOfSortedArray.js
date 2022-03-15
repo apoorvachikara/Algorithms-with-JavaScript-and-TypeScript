@@ -16,7 +16,7 @@ const squares = (array) => {
     return array.sort((a,b) => a -b);
 }
 
-// console.log(squares([-6, -3, 0, 2, 3, 4]));
+console.log(squares([-6, -3, 0, 2, 3, 4]));
 
 
 /**
@@ -69,13 +69,15 @@ const merge = (left, right, array ) => {
      return result;
 }
 
-// console.log(squaresUsingMergeSort([-6, -4, 0, 1, 2, 4]));
+console.log(squaresUsingMergeSort([-6, -4, 0, 1, 2, 4]));
 
 
 /**
  * 
  * @param {*} array 
  * @returns {Array<number>}
+ * 
+ * O(n) and space O(n)
  * 
  * Here we can have two pointer left and right, we compare squares of left
  * and right based on the comparision we increment and dcrement pointer
@@ -87,29 +89,26 @@ const merge = (left, right, array ) => {
 const squaresUsingTwoPointer = (array) => {
         let leftPointer = 0;
         let rightPointer = array.length - 1;
-
-        const swap = (i, j) => {
-            const temp = array[i];
-            array[i] = array[j];
-            array[j] = temp;
-        }
+        const result = new Array(rightPointer + 1).fill(0);
+        let index = array.length -1;
+        
+      
 
         while (leftPointer <= rightPointer) {
             const leftSquare = array[leftPointer] ** 2;
             const rightSquare = array[rightPointer] ** 2;
 
             if (leftSquare > rightSquare) {
-                array[leftPointer] = leftSquare;
-                array[rightPointer] = rightSquare;
-                swap(leftPointer, rightPointer);
-                rightPointer -= 1;
+                result[index] = array[leftPointer] ** 2;
+                leftPointer += 1;
             } else {
                 // swap(leftPointer, rightPointer);
-                array[rightPointer] = rightSquare;
+                result[index] = array[rightPointer] ** 2;
                 rightPointer -= 1;
             }
+            index -= 1;
         }
-        return array;
+        return result;
 }
 
 console.log(squaresUsingTwoPointer([-3, -2, -1, 0, 1, 2, 4, 9]))
