@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+=======
+/**
+ * 
+ * @param {*} number 
+ * @return {string}
+ */
+>>>>>>> 61bb147 (Created some new files)
 const integerToRoman = (number) => {
         const mapping = {
             'M': 1000,
@@ -16,7 +24,9 @@ const integerToRoman = (number) => {
         }
 
         let result = [];
-
+        // Step 1- divide the number by largest to smallest key 
+        // Step 2- repeat the key from step 1 by number of times the keyValues divides number
+        // Step 2 - update the number with given quotient
         for (const romanDigit in mapping) {
             result.push(romanDigit.repeat(Math.floor(number / mapping[romanDigit])));
             number %= mapping[romanDigit];
