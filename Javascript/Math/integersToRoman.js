@@ -1,11 +1,8 @@
-<<<<<<< HEAD
-=======
 /**
  * 
  * @param {*} number 
  * @return {string}
  */
->>>>>>> 61bb147 (Created some new files)
 const integerToRoman = (number) => {
         const mapping = {
             'M': 1000,
