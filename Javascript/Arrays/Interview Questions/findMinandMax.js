@@ -1,5 +1,5 @@
 /**
- * 
+ * Find Minimum and Maximum in an array.
  * @param {*} array 
  * @return {min: number, max: number}
  * O(n) space:O(1)
