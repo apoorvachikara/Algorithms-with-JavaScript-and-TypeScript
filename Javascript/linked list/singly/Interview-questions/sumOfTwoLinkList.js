@@ -64,15 +64,18 @@ function sumLinkList(list1, list2) {
 
   let value1 = '';
   let value2 = '';
-  while (head1) {
-    value1 = head1.value + value1;
-    head1 = head1.next;
+  while (head1 || head2) {
+    if (head1 !== null) {
+      value1 = head1.value + value1;
+      head1 = head1.next;
+    }
+
+    if (head2 !== null) {
+      value2 = head2.value + value2;
+      head2 = head2.next;
+    }   
   }
 
-  while (head2) {
-    value2 = head2.value + value2;
-    head2 = head2.next;
-  }
 
   console.log(value1, value2);
   return +value1+ +value2;
