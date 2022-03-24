@@ -10,3 +10,7 @@ It will really help you to get track on DS, I am continuously adding new problem
 
 
 ![Apoorva's GitHub stats](https://github-readme-stats.vercel.app/api?username=apoorvachikara&show_icons=true&theme=radical)
+
+This repo will have same questions in Typescript and Jvascript, but still trying to manage to create them for Typescript
+
+![Arrays](./Javascript/Arrays/arrays.md)
