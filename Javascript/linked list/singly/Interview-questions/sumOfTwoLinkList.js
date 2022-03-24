@@ -73,7 +73,8 @@ function sumLinkList(list1, list2) {
     if (head2 !== null) {
       value2 = head2.value + value2;
       head2 = head2.next;
-    }   
+    }
+   
   }
 
 
