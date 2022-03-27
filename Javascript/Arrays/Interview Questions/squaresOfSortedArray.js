@@ -16,7 +16,7 @@ const squares = (array) => {
     return array.sort((a,b) => a -b);
 }
 
-console.log(squares([-6, -3, 0, 2, 3, 4]));
+// console.log(squares([-6, -3, 0, 2, 3, 4]));
 
 
 /**
@@ -111,4 +111,5 @@ const squaresUsingTwoPointer = (array) => {
         return result;
 }
 
-console.log(squaresUsingTwoPointer([-3, -2, -1, 0, 1, 2, 4, 9]))
+console.log(squaresUsingTwoPointer( [0, -1, -3, -4, 3, 4, 9]))
+// console.log(squaresUsingTwoPointer([-3, -2, -1, 0, 1, 2, 4, 9]));
