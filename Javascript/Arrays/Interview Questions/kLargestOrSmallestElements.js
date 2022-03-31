@@ -15,5 +15,30 @@ const mockArr = [1, 23, 12, 9, 30, 2, 50];
 console.log(findKElements(mockArr, 0, 3));
 
 
+/**
+ * Using quick sort
+ * @param {*} array 
+ * @param {*} k 
+ */
+
+const swap = (i, j, array) => {
+    const temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+}
+
+const quickSelect = (nums, left, right, k) => {
+    let leftP = left;
+    let rightP = right;
+    let mid = nums[right];
+
+    while (leftP < rightP) {
+      if
+    }
+}
+
+const findKthElement = (array, k) => {
+  return quickSelect(array, 0, array.length - 1, k)
+}
 
 
