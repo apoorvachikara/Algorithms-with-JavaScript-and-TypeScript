@@ -48,6 +48,9 @@ class QuickSort {
     }
 }
 
+const arr_old = [0, -2, -4, -5, 9, 11, 2, 3];
+// console.log((new QuickSort()).sorting(arr_old, 0, arr_old.length -1))
+
 class QuickSortEff {
     sorting(array: number[]) {
         if (array.length <= 1) {
@@ -65,15 +68,12 @@ class QuickSortEff {
                 rightArr.push(arr[i]);
             }
         }
-
         return [...this.sorting(leftArr), pivot, ...this.sorting(rightArr)];
     }
 }
 
-// const arr = [0, -2, -4, -5, 9, 11, 2, 3];
+
 const arr = [0, -1, 0, -3, 9, 1];
-// const sort = new QuickSort();
 const sor = new QuickSortEff();
 console.log(sor.sorting(arr));
 
-// console.log(sort.sorting(arr, 0, arr.length -1));

@@ -71,27 +71,27 @@ const quickSort = (item, left, right) => {
 const arr = [3, 5, 1];
 console.log(quickSort(arr, 0, arr.length -1));
 
-// function QuickSort(Arr){
-//     if(Arr.length <= 1){
-//       return Arr;
-//     }
+function QuickSort(Arr){
+    if(Arr.length <= 1){
+      return Arr;
+    }
 
-//     const pivot = Arr[Arr.length - 1];
-//     const leftArr = [];
-//     const rightArr = [];
+    const pivot = Arr[Arr.length - 1];
+    const leftArr = [];
+    const rightArr = [];
 
-//     for(let i=0; i < Arr.length-1;i++){
-//       if(Arr[i] < pivot){
-//         leftArr.push(Arr[i]);
-//       }
-//       else{
-//         rightArr.push(Arr[i])
-//       }
-//     }
+    for(let i=0; i < Arr.length-1;i++){
+      if(Arr[i] < pivot){
+        leftArr.push(Arr[i]);
+      }
+      else{
+        rightArr.push(Arr[i])
+      }
+    }
 
-//     return [...QuickSort(leftArr) ,pivot,...QuickSort(rightArr)];
+    return [...QuickSort(leftArr) ,pivot,...QuickSort(rightArr)];
 
-//   }
+  }
 
-//   let arr = [0, 8, 9, -2, 4, 3, -1];
-//   console.log(QuickSort(arr));
+  let arr_1 = [0, 8, 9, -2, 4, 3, -1];
+  console.log(QuickSort(arr_1));

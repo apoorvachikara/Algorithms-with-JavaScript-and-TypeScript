@@ -112,3 +112,25 @@ const mergeSort = (left, right) => {
 const arr = [0, -1, -4, 9, 10, -190, 100, 999, 7777];
 console.log(merge(arr));
 
+
+var findMedianSortedArrays = function(nums1, nums2) {
+  let leftPointer = 0;
+  let rightPointer = 0;
+  const result = [];
+  
+  while (leftPointer < nums1.length && rightPointer < nums2.length) {
+      if (nums1[leftPointer] < nums2[rightPointer]) {
+          result.push(nums1[leftPointer]);
+          leftPointer += 1;
+      }  else {
+           result.push(nums2[rightPointer]);
+          rightPointer += 1;
+      }
+  }
+  
+  result.concat(nums1.slice(leftPointer)).concat(nums2.slice(rightPointer));
+  return result;
+};
+
+
+console.log(findMedianSortedArrays([1, 3], [2]));
