@@ -18,7 +18,6 @@ const read = (array) => {
  * @param {*} res 
  */
 const getCount = (ob, res) => {
-    debugger
     let key = Object.getOwnPropertyNames(ob)[0];
     let count = ob[key];
     const highesDomain = key.slice(key.lastIndexOf('.') +1);
