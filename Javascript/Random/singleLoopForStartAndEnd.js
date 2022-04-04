@@ -18,7 +18,23 @@ const loop = (array, position = "start")  => {
         }
 }
 
+/**
+ * 
+ * @param {nunber[]} array 
+ * @param {string} position 
+ */
+const loop_v1 = (array, position = "start")  => {
+    let start = 0;
+    let end = array.length;
 
+    let index = position === "start" ? start : end;
+    let add = position === "start" ? 1: -1;
+
+    while (start < array.length && end >= 0) {
+          console.log(start[index]);
+          index = index + add;
+    }
+}
 
 const array = [1, 2, 3, 4, 5, 6];
 loop(array, "start");
