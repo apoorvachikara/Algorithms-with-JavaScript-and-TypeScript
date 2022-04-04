@@ -1,3 +1,8 @@
+/**
+ * 
+ * @param {number[]} array 
+ * @param {*} position 
+ */
 const loop = (array, position = "start")  => {
         let start = 0;
         let end = array.length;
