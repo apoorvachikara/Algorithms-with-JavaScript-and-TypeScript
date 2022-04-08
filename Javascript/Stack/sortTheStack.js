@@ -1,3 +1,8 @@
+/**
+ * 
+ * @param {*} stack 
+ * @return {Array}
+ */
 const sortStack = (stack) => {
 
     const temp = [];

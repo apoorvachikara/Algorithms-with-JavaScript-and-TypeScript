@@ -19,8 +19,7 @@ const reverse = (string) => {
             start = index +1 ;
         }
     }
-    words.push(string.slice(start))
-    console.log(words)
+    words.push(string.slice(start));
     let s = 0;
     let e= words.length -1;
 
