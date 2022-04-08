@@ -28,26 +28,26 @@ class Tree {
         this.increaseSize();
     }
 
-    // need to update the context as it is not removing the elemet
-    // logic is fine
     remove(data = 0, node = this.root) {
         if (!node) return null;
 
         let current = node;
             if (current.value > data) {
-                this.remove(data, current.left);
+                current.left = this.remove(data, current.left);
+                return current;
             } else if (current.value < data) {
-                this.remove(data, current.right);
+                current.right = this.remove(data, node.right);
+                return current;
             } else {
 
                 if (current.right === null && current.left === null) {
-                      current = null;
-                      return
+                    current = null;
+                      return current;
                 } else {
                     // move up the smaller node
                     // that is the left node
                     current  = current.left === null ? current.right : current.left;
-                    return;
+                    return current;
                 }
             }
         }
@@ -90,3 +90,5 @@ tree.insert(14);
 tree.insert(15);
 
 console.dir(tree);
+
+tree.remove(12);
