@@ -19,3 +19,31 @@ const power = (num, power_1) => {
 }
 
 console.log(power(2, 8));
+
+/**
+ * 
+ * @param {*} number 
+ * @param {*} power 
+ * @return {number}
+ * Time O(logn) and Space O(logn)
+ */
+const power_eff = (number, power) => {
+    let res = 1;
+
+    while (power > 0) {
+        // check if exponent is odd 
+        // multilply it to response to make
+        // it even
+        if (power & 1) 
+            res = res * number;
+
+        // divide power by half
+        power = power >> 1;
+        
+        // square the number 
+        number = number ** 2;
+    }
+    return res;
+}
+
+console.log(power_eff(2, 8));
