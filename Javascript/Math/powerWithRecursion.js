@@ -26,6 +26,7 @@ console.log(power(2, 8));
  * @param {*} power 
  * @return {number}
  * Time O(logn) and Space O(logn)
+ * It is not recursive and follows iteration
  */
 const power_eff = (number, power) => {
     let res = 1;
