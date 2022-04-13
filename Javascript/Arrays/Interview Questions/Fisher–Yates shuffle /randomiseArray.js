@@ -29,3 +29,30 @@ const randomArray = (array) => {
 const array = [1, 2, 3, 4, 5];
 console.log(randomArray(array));
 
+/**
+ * 
+ * @param {number} array 
+ * @return {number[]}
+ * This algorithm solves the problem in O(n) complexity
+ * 
+ * Step 1: Start from the end of the array index
+ * Step 2: run a loop from the end of the array i
+ * Step 3: choose random number from 0 to array.length - 1
+ * Step 4: every iteration the slected random number will be swaped with 
+ * random index and array loop index 
+ * Step 5: once the loop is over you will get random array
+ */
+ const fisherYates = (array) => {
+
+    for (let index = array.length - 1; index > 0; index--) {
+        // index + 1 makes the current index inclusive
+        const random = Math.floor(Math.random() * (index + 1));
+        const temp = array[random];
+        array[random] = array[index];
+        array[index] = temp;
+    }
+    return array;
+}
+
+const arr = [1, 2, 3, 4, 5, 6, 7];
+console.log(fisherYates(arr));
