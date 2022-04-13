@@ -51,31 +51,37 @@
   
       console.log(values);
     }
-  
+
     /**
-     * reverse the link list
+     * 
+     * @return {number}
+     * It uses reservoir sampling for random numbers
      */
-    invert(count) {
-      let prev = null;
-      let current = this.head;
-      let next = null;
-  
-      while (current !== null && count--) {
-        next = current.next;
-        current.next = prev;
-        prev = current;
-        current = next;
-      }
-      
-      let head = prev;
-      while (prev.next) {
-          prev = prev.next;
-      }
+    random() {
+        let result = [];
 
-     prev.next = current;
-     this.head = head; 
+        if (this.head === null) return null;
 
+        let current = this.head;
+        let count = 1;
+
+        while (current) {
+
+            const random = Math.trunc(Math.random() * count);
+            const random_1 = Math.trunc(Math.random() * count);
+
+            if (random  === 0|| random_1 === 0) {
+                result.push(current.val);
+            }
+
+            
+
+            current = current.next;
+            count++;
+        }
+        console.log(result);
     }
+  
   }
   
   const l1 = new LinkList(1);
@@ -85,8 +91,9 @@
   }
   
   l1.print();
-  l1.invert(4);
-  l1.print();
+  l1.random();
+//   l1.invert(3);
+//   l1.print();
   
 
 
