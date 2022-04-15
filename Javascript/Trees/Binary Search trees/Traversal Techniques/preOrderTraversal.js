@@ -63,8 +63,8 @@ class BST {
         while(queue.length) {
             current = queue.pop();
             result.push(current.value);
-            if (current.right) queue.push(current.right);
-            if(current.left) queue.push(current.left);
+            if (current.right) queue.push(current.left);
+            if(current.left) queue.push(current.right);
         }
 
         return result;
@@ -77,8 +77,8 @@ class BST {
     traverselHelper(node, result) {
         if (!node) return 
         result.push(node.value);
-        this.traverselHelper(node.right, result);
         this.traverselHelper(node.left, result);
+        this.traverselHelper(node.righ, result);
     }
 }
 
