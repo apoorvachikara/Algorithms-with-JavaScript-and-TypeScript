@@ -23,5 +23,5 @@ const naiveAlgo = (string, pattern) => {
 }
 
 let txt = "THIS IS A TEST TEXT";
-    let pat = "TEST";
+    let pat = "TEXT";
     naiveAlgo(txt, pat);
