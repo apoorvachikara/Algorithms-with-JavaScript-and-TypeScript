@@ -1,9 +1,10 @@
 /**
- * 
+ * By sorting both the arrays and compare the numbers
  * @param {*} array1 
  * @param {*} array2 
  * @return {boolean}
  * Time - O(n + nlog(n)) Space - O(n)
+ * 
  */
 const compare = (array1, array2) => {
     // length of arrays
@@ -24,6 +25,15 @@ const compare = (array1, array2) => {
     return true;
 }
 
+/**
+ * Add the counts of the elements from one array
+ * and compare it with another array
+ * 
+ * @param {*} array1 
+ * @param {*} array2 
+ * @return {boolean} 
+ * 
+ */
 const compare_v1 = (array1, array2) => {
     const l1 = array1.length;
     const l2 = array2.length; 
@@ -49,6 +59,7 @@ const compare_v1 = (array1, array2) => {
 
     return true;
 }
+
 
 const array1 = [0, -1, -2, 1, 4];
 const array2 = [1, 4, -1, -2, 5];
