@@ -2,6 +2,8 @@
  * Using bruteforce run two loops one for 
  * positive numbers and another for the array length
  * 
+ * O(n**2) Space O(1)
+ * 
  * const arr = [-3, 5, 6, 2, -4, 4, 3]; // 3
  * 
  * @param {*} array 
@@ -21,5 +23,30 @@ const findFirstMissingPositive = (array) => {
     return 'All positive number exist'
 }
 
-const array = [-3, 5, 6, -4, 2, 4, 3, 1, 7];
+const array = [-3, 5, 6, -4, 2 ,2, 4, 3, 1, 8];
 console.log(findFirstMissingPositive(array));
+
+
+/**
+ * Create a hash table and adding the values to it,
+ * run another loop for positive numbers and check if all of them 
+ * exist 
+ * 
+ * O(n) - Space O(n)
+ * @param {*} array 
+ * @return {boolean}
+ */
+
+const findFirstMissingPositive_v1 = (array) => {
+    const allElements = new Map();
+
+    for (let index = 0; index < array.length; index++) {
+        allElements.set(array[index], ((allElements.get(array[index]) +1 )|| 1));
+    }
+
+    for (let i = 1; i < array.length+1; i++) {
+        if (!allElements.get(i)) return i;
+    }
+}
+
+console.log(findFirstMissingPositive_v1(array));
