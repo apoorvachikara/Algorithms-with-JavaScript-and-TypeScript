@@ -64,6 +64,29 @@ const isSubset_V1 = (mainArray, subset) => {
 }
 
 
+/**
+ * Sorting the mainArray and use two pointers to check 
+ * if the number are subset 
+ * 
+ * @param {*} mainArray 
+ * @param {*} subset 
+ * @return {boolean}
+ */
+const isSubset_v2 = (mainArray, subset) => {
+    return true;
+}
+
+
+/**
+ * Using hash tabel and check if the elements are present
+ * 
+ * @param {*} mainArray 
+ * @param {*} subset 
+ * @return {boolean}
+ */
+const isSubset_v3 = (mainArray, subset) => {
+    return true;
+}
 
 
 
