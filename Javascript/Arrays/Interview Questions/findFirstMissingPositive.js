@@ -54,7 +54,7 @@ console.log(findFirstMissingPositive_v1(array));
 /**
  * Using sorting and single scan
  * 
- * O(nlog(n) + n) Space O(n) 
+ * O(nlog(n)) Space O(1) 
  * @param {*} array 
  * @return {boolean}
  */
@@ -74,3 +74,10 @@ const findFirstMissingPositive_v2 = (array) => {
 }
 
 console.log(findFirstMissingPositive_v1(array));
+
+/**
+ * using partition and in-place hashing
+ */
+const findFirstMissingPositive_v3 = () => {
+
+}
