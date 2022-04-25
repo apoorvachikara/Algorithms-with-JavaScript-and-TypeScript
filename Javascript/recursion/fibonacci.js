@@ -18,7 +18,11 @@ console.log(cache);
 console.log(fibonacciMem(4));
 
 
-// Using less memory
+/**
+ * O(n) - Time and O(1) space
+ * @param {*} n 
+ * @return {number}
+ */
 const fibLessMem = (n) => {
   if (n === 0) return 0;
   else if (n === 1) return 1;
