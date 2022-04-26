@@ -35,6 +35,15 @@ const findFirstAndLast_v1 = (array, target) => {
  * @param {*} target 
  */
 const findFirstAndLast_v2= (array, target) => {
+
+     /**
+      * We keep moving the binary search until we find the 
+      * middle === target and middle - 1 < middle
+      * 
+      * @param {*} array 
+      * @param {*} target 
+      * @return {number}
+      */
       const firstOccurence = (array,target) => {
             let start = 0;
             let end = array.length;
