@@ -1,5 +1,6 @@
 
 /**
+ * O(n) time 
  * 
  * @param {number[]} array_1 
  * @param {number[]} array_2 
