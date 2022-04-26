@@ -1,3 +1,8 @@
+/**
+ * Time - O(logn) Space - O(1) 
+ * @param {*} array 
+ * @return {number} index of smallest element
+ */
 const rotatedArray = (array) => {
     
     let start = 0;
