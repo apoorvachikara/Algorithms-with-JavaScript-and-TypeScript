@@ -28,11 +28,48 @@ const findFirstAndLast_v1 = (array, target) => {
 
 /**
  * 
+ * Using twice binary search
+ * Time: O(logn + logn) Space: O(1)
+ * 
  * @param {*} array 
  * @param {*} target 
  */
 const findFirstAndLast_v2= (array, target) => {
+      const firstOccurence = (array,target) => {
+            let start = 0;
+            let end = array.length;
 
+            while (start < end) {
+                const middle = Math.trunc((start+end)/2);
+
+                if (array[middle] > array[middle -1] && array[middle] === target) {
+                    return middle;
+                } else if (array[middle] < target) {
+                        start = middle +1;
+                } else {
+                    end = middle - 1;
+                }
+            }
+        }
+
+        const lastOccurence = (array, target) => {
+            let start = 0;
+            let end = array.length;
+
+            while (start < end) {
+                const middle = Math.trunc((start+end)/2);
+
+                if (array[middle] < array[middle + 1] && array[middle] === target) {
+                    return middle;
+                } else if (target < array[middle]) {
+                    end = middle - 1;
+                } else {
+                    start = middle +1;
+                }
+            }
+        }
+
+        return {start: firstOccurence(array, target), end: lastOccurence(array, target)}
 }
 
 
@@ -40,3 +77,4 @@ const arr = [1, 2, 3, 4, 4, 4, 4, 6, 7, 8];
 
 console.log(findFirstAndLast(arr, 4));
 console.log(findFirstAndLast_v1(arr, 10));
+console.log(findFirstAndLast_v2(arr, 4));
