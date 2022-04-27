@@ -66,3 +66,5 @@ const array2 = [1, 4, -1, -2, 5];
 
 console.log(compare(array1, array2));
 console.log(compare_v1(array1, array2));
+
+
