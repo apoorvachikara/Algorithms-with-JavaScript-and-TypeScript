@@ -45,8 +45,13 @@ class Tree {
     /**
      * 
      */
-    pre_order_traversal() {
-
+    pre_order_traversal(node = this.root, temp = new Node()) {
+        if (node === null) return;
+        this.pre_order_traversal(node.right, temp);
+        this.pre_order_traversal(node.left, temp);
+        node.right = temp;
+        node.left = null;
+        temp = node;
     }
 }
 
@@ -54,4 +59,5 @@ const tree = new Tree();
 tree.insert(10).insert(9).insert(8).insert(7).insert(11).insert(12).insert(13)
 .insert(14).insert(16);
 
+tree.pre_order_traversal();
 console.dir(tree, {depth: null})
