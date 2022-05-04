@@ -13,7 +13,7 @@ const GCD = (a, b) => {
     else return GCD(a, b - a);
 }
 
-console.log(GCD(98, 56));
+console.log(GCD(98, 56)); //14
 
 /**
  * 
@@ -26,4 +26,19 @@ const GCD_EUCLIDEAN = (a, b) => {
     return GCD_EUCLIDEAN(b, a % b);
 }
 
-console.log(GCD_EUCLIDEAN(98, 56));
+console.log(GCD_EUCLIDEAN(98, 56)); //14
+
+/**
+ * 
+ * @param {*} array 
+ * @return {number}
+ */
+const GCD_MultipleNumbers = (array) => {
+    let gcd = 0;
+    for (let index = 0; index < array.length; index++) {
+        gcd = GCD_EUCLIDEAN(gcd, array[index]);
+    }
+    return gcd;
+}
+
+console.log(GCD_MultipleNumbers([98, 56])); //14
