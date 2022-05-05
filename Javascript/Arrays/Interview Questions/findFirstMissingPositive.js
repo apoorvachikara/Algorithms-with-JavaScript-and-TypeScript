@@ -13,7 +13,6 @@ const findFirstMissingPositive = (array) => {
     let isExist = false;
     for (let index = 1; index < array.length - 1; index++) {
         for (let inner = 0; inner < array.length; inner++) {
-            debugger
             if (index === array[inner]) isExist = true;
         }
         if (!isExist) return index;
