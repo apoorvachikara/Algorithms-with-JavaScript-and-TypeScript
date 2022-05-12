@@ -8,11 +8,10 @@ function retry() {
         if (opts.retry >= count) {
             try {
             const res = await request();
-            console.log(res);
             return res;
             } catch (e) {
                 console.error(`Error: ${e}, Request count: ${count}`)
-                execute(request, count + 1);
+                return execute(request, count + 1);
             }
             
         } else {
