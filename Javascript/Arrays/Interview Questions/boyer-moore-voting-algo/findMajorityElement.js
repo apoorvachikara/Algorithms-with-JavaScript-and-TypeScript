@@ -1,3 +1,10 @@
+/**
+ * Time O(n) Space O(m)
+ * 
+ * where m is number of unique elements
+ * @param {*} array 
+ * @returns 
+ */
 const findMajority = (array) => {
     const threshold = Math.trunc(array.length /2);
     let majority = 0;
@@ -12,3 +19,4 @@ const findMajority = (array) => {
 }
 
 console.log(findMajority([2,2,1,1,1,2,2])); // 2
+

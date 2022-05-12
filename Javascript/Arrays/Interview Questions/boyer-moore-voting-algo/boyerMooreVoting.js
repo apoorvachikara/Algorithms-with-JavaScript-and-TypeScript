@@ -5,9 +5,13 @@
  * 
  * Step 2: now check the count of the given candidate 
  * 
+ * Time O(n) and Space O(1)
+ * 
  * @param {*} array 
  * @return number - candidate 
  */
+
+const util = require('util');
 const findMajority = (array) => {
     // initialse count
     let count = 0;
