@@ -44,3 +44,9 @@ const requests = () => {
     })
 }
 
+
+console.log(Object.prototype.toString.call([])) // [object Array]
+
+console.log(Object.prototype.toString.call(() => {"by Apoorva Chikara"})) // [object Function]
+
+console.log(Object.prototype.toString.call(10)) // [object Number]
