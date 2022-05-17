@@ -6,6 +6,9 @@
 const naturalNumberSum = (length) => (length * (length+ 1))/2;
 
 /**
+ * O(n*n) -Time and O(1) space
+ * 
+ * Time - because we are finding indexOf
  * 
  * @param {*} array 
  * @return {missing, repeating} 
@@ -16,7 +19,7 @@ const findMissingAndRepeating = (array) => {
     let actualTotal = naturalNumberSum(array.length);
     for (let index = 0; index < array.length; index++) {
         total += array[index];
-        if(array[index] !== array.lastIndexOf(array[index])) {
+        if(index !== array.lastIndexOf(array[index])) {
             repeating = array[index];
         }
     }
