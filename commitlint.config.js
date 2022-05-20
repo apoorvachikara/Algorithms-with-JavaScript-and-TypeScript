@@ -13,7 +13,7 @@ module.exports = {
         "revert", 
         "style", 
         "test", 
-        "algo add", 
-        "algo update"]],
+        "algo-add", 
+        "algo-pdate"]],
     }
 };
